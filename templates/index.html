@@ -1,0 +1,105 @@
+{#
+  index.html — Public Homepage
+  This is the landing page for the MediFile public website.
+  It extends base.html (inherits navbar, footer, flash messages).
+#}
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<section class="hero">
+  <div class="container">
+
+
+    <h1 class="hero-headline">
+      <span class="highlight">Medisch dossierbeheer</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      MediFile is een veilig platform, speciaal ontworpen voor moderne zorginstellingen. Krijg toegang tot patiëntendossiers, beheer uploads en blijf voldoen aan de regelgeving, allemaal in één versleutelde omgeving.
+    </p>
+
+    <div class="hero-actions">
+      <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">
+       Medwerker portaal Login
+      </a>
+      <a href="{{ url_for('contact') }}" class="btn btn-secondary btn-lg">
+        Contacteer ons
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="section" style="background: var(--clr-bg-deepest);">
+  <div class="container">
+
+    <div class="text-center mb-xl">
+      <span class="section-label">Kernkenmerken</span>
+      <h2>Alles wat jouw team nodig heeft</h2>
+      <p style="margin: 0 auto; text-align: center;">
+        Ontworpen voor klinisch personeel, beveiligingsteams en administrators.
+        MediFile balancert gebruiksvriendelijkheid met enterprise-grade beveiliging.
+      </p>
+    </div>
+
+    <div class="features-grid stagger">
+
+      <div class="feature-card">
+        <h3>Zero-Trust authenticatie</h3>
+        <p>Bcrypt-gehashte wachtwoorden, sessiebeheer en volledige auditregistratie van elke inlogpoging, ongeacht of deze geslaagd of mislukt is..</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Patiëntendossier zoeken</h3>
+        <p>Direct zoeken in duizenden patiëntendossiers op naam, aandoening, arts of afdeling. Resultaten zijn geëscaped om XSS te voorkomen.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Veilige bestandsuitwisseling</h3>
+        <p>Geüploade bestanden zijn versleuteld en worden veilig opgeslagen in de database.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>SQL injectiepreventie</h3>
+        <p>Alle databasequeries gebruiken parameteriseerde statements. Uw patiëntendata is beschermd tegen injectieaanvallen op elke laag.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Live Dashboard</h3>
+        <p>Kijk in real-time naar belangrijke statistieken: patiëntentellingen, kritieke gevallen, geüploade bestanden en inlogactiviteit.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Audit Logging</h3>
+        <p>Elke inlogpoging, bestandsupload en patiënttoegang wordt gelogd. Compliance-ready activity trails voor security audits.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="section" style="background: var(--clr-bg-deepest);">
+  <div class="container text-center">
+    <span class="section-label">Aan de slag</span>
+    <h2>Klaar om uw gegevens te beveiligen?</h2>
+    <p style="margin: 16px auto 32px; text-align: center;">
+      Neem contact op met ons team of log in op de medewerkersportal om het systeem te verkennen.
+    </p>
+    <div class="flex-center gap-md flex-wrap">
+      <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">Neem contact op</a>
+      <!--eventueel later-->
+<!-- <a href="{{ url_for('orgchart') }}" class="btn btn-secondary btn-lg">Ontmoet het team</a> -->    </div>
+  </div>
+</section>
+
+{% endblock %}

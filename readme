@@ -1,0 +1,68 @@
+#  MediFile, Veilig Medisch Bestandsbeheersysteem
+
+> Een cybersecurity-gericht platform voor medische dossiers gebouwd met Python (Flask) + SQLite.  
+
+## Wat doet medifile?
+
+MediFile is een webgebaseerd systeem voor medische dossiers, gebouwd met:
+
+- **Backend:** Python + Flask (lichtgewicht, geen complexe setup)
+- **Database:** SQLite (standaard ingebouwd in Python, denk ik handig voor ons project)
+- **Frontend:** HTML + CSS
+
+---
+
+## Functies
+
+- Audit logging van logins en uploads (`medifile.log`)  
+- Publieke website (homepage, contact, code of conduct, org chart)  
+
+## TO DO
+- Dashboard met live statistieken  
+- Veilige bestandsupload met validatie en sanitizing  
+- Patiëntbeheer: zoeken, filteren en details bekijken  
+- Authenticatie met bcrypt-hashed wachtwoorden en sessiebeheer  
+
+## Installatie
+
+### 1. Controleer Python
+
+```bash
+python --version
+
+Open CMD in de map
+
+Mac/Linux:
+cd ~/Desktop/medifile
+
+3. Installeer dependencies
+pip install -r requirements.txt
+
+4. Start de applicatie
+python app.py
+
+5. Open in browser
+http://127.0.0.1:5000
+
+Problemen oplossen
+
+Pip werkt niet
+python -m pip install -r requirements.txt
+
+Port al in gebruik
+
+Pas aan in app.py:
+port=5001
+
+Flask ontbreekt
+
+pip install flask
+Database resetten
+
+Verwijder:
+instance/medifile.db
+
+Upload werkt niet
+
+Controleer map:
+uploads/
