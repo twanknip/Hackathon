@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Staff Login{% endblock %}
+
+{% block content %}
+
+<div class="login-page">
+  <div class="login-card">
+
+    <div class="login-logo">
+      <div class="brand-icon">⚕</div>
+      <h1>Medi<span class="text-accent">File</span></h1>
+    </div>
+
+   
+    <form method="POST" action="{{ url_for('login') }}" novalidate>
+
+      <div class="form-group">
+        <label class="form-label" for="username">Gebruikersnaam</label>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="form-control"
+            placeholder="Voer uw gebruikersnaam in"
+            autocomplete="username"
+            required
+            autofocus
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">Wachtwoord</label>
+        <div class="input-wrapper">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Voer uw wachtwoord in"
+            autocomplete="current-password"
+            required
+          />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-full btn-lg" style="margin-top: 8px;">
+        Login
+      </button>
+
+    </form>
+
+  
+    <div class="text-center mt-lg" style="font-size: 0.82rem; color: var(--clr-text-muted);">
+      <a href="{{ url_for('index') }}" style="color: var(--clr-text-muted);">←Terug naar website</a>
+    </div>
+
+  
+  </div>
+</div>
+
+{% endblock %}
